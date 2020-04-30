@@ -22,7 +22,7 @@ public:
   const std::string HTTP_RESPONSE_SIZE = "http.response.size";
 
   const std::string LOCAL_COMPONENT = "lc";
-  const std::string ERROR = "error";
+  const std::string ZKERROR = "error";
   const std::string CLIENT_ADDR = "ca";
   const std::string SERVER_ADDR = "sa";
 

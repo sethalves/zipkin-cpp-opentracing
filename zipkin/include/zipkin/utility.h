@@ -4,8 +4,14 @@
 #include <cstdint>
 #include <sstream>
 #include <string>
-#include <strings.h>
 #include <vector>
+
+#ifdef _MSC_VER
+#define strncasecmp _strnicmp
+#define strcasecmp _stricmp
+#else
+#include <strings.h>
+#endif
 
 namespace zipkin {
 using SystemClock = std::chrono::system_clock;

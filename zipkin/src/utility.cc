@@ -6,7 +6,9 @@
 #include <cstdint>
 #include <iterator>
 #include <limits>
+#ifndef _MSC_VER
 #include <pthread.h>
+#endif
 #include <random>
 #include <string>
 #include <vector>
@@ -24,7 +26,11 @@ namespace zipkin {
 namespace {
 class TlsRandomNumberGenerator {
 public:
-  TlsRandomNumberGenerator() { pthread_atfork(nullptr, nullptr, onFork); }
+  TlsRandomNumberGenerator() {
+#ifndef _MSC_VER
+    pthread_atfork(nullptr, nullptr, onFork);
+#endif
+  }
 
   static std::mt19937_64 &engine() { return base_generator_.engine(); }
 
