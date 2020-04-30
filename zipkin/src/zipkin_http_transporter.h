@@ -3,7 +3,11 @@
 #include "transporter.h"
 #include "zipkin_reporter_impl.h"
 
+#ifdef _MSC_VER
+#define CURL_STATICLIB
+#endif
 #include <curl/curl.h>
+
 #include <exception>
 
 namespace zipkin {

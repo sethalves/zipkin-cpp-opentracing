@@ -3,7 +3,6 @@
 #include "zipkin_core_constants.h"
 #include "zipkin_reporter_impl.h"
 
-#include <curl/curl.h>
 #include <iostream>
 
 namespace zipkin {
